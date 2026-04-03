@@ -287,14 +287,14 @@ Claude 改完任何檔案，自動跑 Prettier 格式化。
     "PreToolUse": [
       {
         "matcher": "Bash",
-        "command": "echo \"$COMMAND\" | grep -qE 'rm\\s+-rf' && exit 1 || exit 0"
+        "command": "echo \"$COMMAND\" | grep -qE 'rm\\s+-rf' && exit 2 || exit 0"
       }
     ]
   }
 }
 ```
 
-只要 Claude 想跑任何包含 `rm -rf` 的指令，直接擋住。exit code `1` = 阻止，exit code `0` = 繼續。
+只要 Claude 想跑任何包含 `rm -rf` 的指令，直接擋住。exit code `2` = 阻止，exit code `0` = 繼續。exit code `1` 是「hook 本身執行失敗」的非阻斷性錯誤，Claude 的動作還是會繼續進行。
 
 這個設計很優雅：你不用在 settings.json 裡列舉每一種危險指令的變體，Hook 可以用 grep 做複雜的邏輯判斷。
 
@@ -317,10 +317,11 @@ Claude 改完任何檔案，自動跑 Prettier 格式化。
 
 Hooks 的行為取決於腳本的 exit code：
 
-- `exit 0` = 繼續執行
-- `exit 1` = 阻止這次操作
+- `exit 0` = 繼續執行（proceed）
+- `exit 2` = 阻止這次操作（block）
+- `exit 1` = hook 本身執行失敗（non-blocking error），Claude 的動作**不會**被擋住
 
-這個設計很乾淨。你的 hook 可以做任何複雜的邏輯，最後只需要決定「繼續還是擋住」。
+這個區別很重要：如果你想擋住 Claude 的操作，一定要用 `exit 2`，不是 `exit 1`。`exit 1` 只代表「hook 掛了」，Claude 還是會繼續。你的 hook 可以做任何複雜的邏輯，最後只需要決定「繼續（0）、自身失敗（1）、還是擋住（2）」。
 
 一個實用的注意事項：在 PostToolUse hook 的指令加 `2>/dev/null || true`，這樣就算 Prettier 或 ESLint 出錯，Claude 的主要工作流不會被中斷。Hook 的失敗不應該影響 AI 的主要任務。
 

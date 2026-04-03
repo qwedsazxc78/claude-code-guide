@@ -132,6 +132,8 @@ jobs:
 
 有一個 flag 要提醒你：`--dangerously-skip-permissions`。在 CI 環境裡，Claude 沒辦法互動式地問你要不要允許某個操作，所以有時候需要這個 flag 跳過權限確認。**在 CI 裡用是 OK 的，但在本地開發千萬不要用。** 名字裡有 dangerously 不是裝飾。
 
+2026 年 3 月推出的 Auto Mode 是更安全的替代方案。在支援的環境裡，優先用 Auto Mode 而不是 `--dangerously-skip-permissions`。Auto Mode 背後有一個分類器監控每個動作，會擋住超出範圍的操作和 prompt injection，讓自動化更安全。
+
 ---
 
 ## 6.3 Agent Teams — 誠實評估
@@ -184,6 +186,8 @@ Agent Teams 很酷。但現在不是你必須用的東西。
 Claude Code 很強，但有個門檻：你要會用 VS Code 或 Terminal。
 
 CoWork 是 Anthropic 試圖拆掉這個門檻的嘗試。在 **Claude Desktop App** 裡，你可以勾選「Work in a Folder」，選一個資料夾，然後用自然語言告訴 Claude 你要做什麼——不需要任何技術背景。
+
+2026 年 3 月，CoWork 新增了 Computer Use 能力 — Claude 可以直接控制你的 Mac（4 月擴展到 Windows）：點擊、輸入、切換 App、完成整個工作流。這讓 CoWork 從「操作資料夾裡的檔案」升級到「操作整台電腦」。
 
 ### CoWork vs Claude Code
 

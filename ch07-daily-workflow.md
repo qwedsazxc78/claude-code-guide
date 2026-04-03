@@ -181,6 +181,8 @@
 
 Auto-Accept 爽一時，被改壞一次就知道了。我現在 Auto-Accept 只用在跑 test 或格式化，其他一律 Edit Mode。
 
+補充：2026 年 3 月推出的 Auto Mode 是第四種模式，它背後有分類器把關，比 Auto-Accept 更安全，但前提是你的 CLAUDE.md 邊界設定夠完整。不要把 Auto Mode 和 Auto-Accept 混淆——後者是直接套用，前者還是有監控機制在運作。
+
 ### 坑 5：Hooks 擋住操作
 
 症狀：Claude 做什麼都被擋，或者每個動作都慢了好幾秒。
