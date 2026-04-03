@@ -14,4 +14,8 @@
 * [第五章：Config — 把 Claude 配置成你的專屬工程師](ch05-config-claudemd.md)
 * [第六章：Cloud Worker — 背景執行與平行開發](ch06-cloud-worker.md)
 * [第七章：我的日常工作流與踩坑指南](ch07-daily-workflow.md)
-* [第八章：進階預覽 — MCP、Commands、Agents、Skills](ch08-advanced-preview.md)
+* [第八章：進階 — MCP、Commands、Agents、Skills](ch08-advanced-preview.md)
+
+## 附錄
+
+* [附錄 A：我該用哪個功能？— 初學者決策指南](appendix-a-decision-guide.md)
