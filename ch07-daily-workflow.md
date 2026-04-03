@@ -233,4 +233,4 @@ Pro 方案有使用量上限，重度使用者通常每 2-3 小時就會碰到 r
 
 如果你已經跑完這四週，想帶走真的可以上線的成果，完整版 Workshop 有三個交付 Lab：60 分鐘做一個上線的個人網站、45 分鐘做一個自動化工具、45 分鐘做一份專業研究報告。不是練習，是真的可以用的東西。
 
-想動手練？精華版 Workshop 有完整 Lab → https://www.skool.com/ai-brain-alex/classroom?ref=5dde9b20e8e7432aa9a01df6e89685f4
+第八章我們進進階地帶：multi-agent 系統、CLAUDE.md 的深度設計、還有 Gaia 這套內容飛輪系統的完整拆解。

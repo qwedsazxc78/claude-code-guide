@@ -184,6 +184,26 @@ Claude 開始改 code，每個檔案都顯示 diff 讓你 review。你逐個 Acc
 
 Claude 看 terminal 輸出，如果有 failing test，直接幫你修。
 
+### 如果你用 TypeScript / Express
+
+同樣的流程，換個語言：
+
+**Step 1：Plan Mode**
+
+```
+我需要在 Express API 加一個 GET /api/health endpoint，
+回傳 { status: "ok", uptime: process.uptime(), timestamp: new Date() }。
+加上對應的 Jest test。
+```
+
+Claude 會列出：修改 `src/routes/index.ts`、新增 `src/routes/health.ts`、新增 `tests/health.test.ts`。
+
+**Step 2-4：同樣的 Review → Edit → Test 流程。**
+
+你有沒有注意到？需求描述的方式、Plan Review 的方式、看 diff 的方式，都一樣。只有最後跑測試從 `pytest` 換成 `jest`。
+
+語言不同，工作流一樣。Plan Mode 不在乎你用什麼框架。
+
 ---
 
 整個流程下來，你從一句需求描述，到有一個運作正確的功能，沒有盲目接受任何一行 code，也沒有在「方向錯了然後 undo 很久」的地方浪費時間。
@@ -192,6 +212,6 @@ Claude 看 terminal 輸出，如果有 failing test，直接幫你修。
 
 **重點來了**：Plan → Review → Edit → Test 這四個步驟，就是 AI 時代的開發節奏。Checkpoint 是你的安全網，Inline Diff 是你的品質關卡，Plan Mode 是你的方向確認機制。三個工具一起用，你對 Claude 的掌控度其實比你想的高很多。
 
-想動手練？精華版 Workshop 有完整 Lab → https://www.skool.com/ai-brain-alex/classroom?ref=5dde9b20e8e7432aa9a01df6e89685f4
+第五章我們聊 CLAUDE.md——如何把你的規範寫進 Claude 的記憶，讓每次對話都從正確的起點開始。
 
 ---

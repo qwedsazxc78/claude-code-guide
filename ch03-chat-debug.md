@@ -26,6 +26,31 @@ Claude Code 裡的對話，運作方式完全不同。
 
 舉個例子：我的 content-asset-system 有 69 個 slash commands，每個都是一個 .md 檔。我問 Claude「幫我看一下 /pulse-post 和 /pulse-check 有沒有重複邏輯」，它自己去讀了兩個 command 檔案、找到了共用的 validation 邏輯，然後建議我抽成一個 shared util。整個過程我沒貼任何一行 code。
 
+### 一段完整的對話範例
+
+讓我展示一個真實的 debug 對話流程。假設你接手了一個 FastAPI 專案，API 回傳速度突然變慢：
+
+**你的 prompt：**
+> @src/api/endpoints.py 這個 GET /users endpoint 最近回傳變很慢，大概 3-5 秒。可以幫我看一下嗎？
+
+**Claude 的回覆（大約 10 秒後）：**
+> 我看了 endpoints.py 第 45-62 行的 `get_users` 函式。有兩個問題：
+>
+> **問題一**：第 52 行 `users = db.query(User).all()` 會載入所有 User 的所有欄位，包含 `profile_image`（BLOB 欄位）。建議改成只撈需要的欄位：
+> `users = db.query(User.id, User.name, User.email).limit(50).all()`
+>
+> **問題二**：第 58 行有 N+1 query — 每個 user 都會額外查一次 `department` table。建議用 `joinedload`：
+> `users = db.query(User).options(joinedload(User.department)).limit(50).all()`
+
+**你的 follow-up：**
+> 改第一個就好，N+1 那個我知道，那是 feature 不是 bug（部門資料是 lazy load 設計的）
+
+**Claude 的回覆：**
+> 了解，只改 BLOB 的部分。
+> [直接顯示 diff，只動那一行]
+
+這就是 Claude Code 跟 ChatGPT 的核心差異：它讀了你的程式碼，理解了上下文，提出精準的建議。你說不改 N+1，它就不改——不會堅持、不會再問一次。你不需要複製貼上任何東西，也不需要解釋你的架構設計決策。
+
 ---
 
 ## 3.2 @mention：精準指定上下文
@@ -137,6 +162,6 @@ Claude 在你旁邊，它看到你看到的東西。直接問就好。
 
 **重點來了**：Chat 功能的本質是「給 Claude 正確的上下文，得到正確的答案」。`@mention` 精準帶入上下文，Extended Thinking 處理複雜問題，Multi-Tab 管理平行任務，`@terminal` 直接 debug。這四個工具組合在一起，才是真正的 AI 開發體驗。
 
-想動手練？精華版 Workshop 有完整 Lab → https://www.skool.com/ai-brain-alex/classroom?ref=5dde9b20e8e7432aa9a01df6e89685f4
+下一章我們進 Work 模式——從對話變成真的動手改 code。
 
 ---
