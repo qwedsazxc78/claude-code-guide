@@ -1,0 +1,14 @@
+{
+  "title": "Claude Code 完全指南",
+  "description": "繁體中文 Claude Code 完全指南 — 從入門到 AI Agent 團隊設計",
+  "author": "Alex Hsieh (Cloud-F1)",
+  "language": "zh-tw",
+  "gitbook": ">=3.2.0",
+  "links": {
+    "sidebar": {
+      "YouTube": "https://www.youtube.com/@ai-brain-alex",
+      "Skool 社群": "https://www.skool.com/ai-brain-alex/about?ref=5dde9b20e8e7432aa9a01df6e89685f4",
+      "Workshop": "https://www.skool.com/ai-brain-alex/classroom?ref=5dde9b20e8e7432aa9a01df6e89685f4"
+    }
+  }
+}
