@@ -1,7 +1,11 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Claude Code 完全指南 — Agent Operating Context
 
 > 繁體中文開源書，8 章 + 1 附錄，~80 頁 PDF
-> Repo: https://github.com/cloud-f1/claude-code-guide-zh-tw
+> Repo: https://github.com/qwedsazxc78/claude-code-guide
 
 ## What This Project Is
 
@@ -100,6 +104,26 @@
 | ai-coding-template | ~/Documents/git_saas/ai-coding-template | Athena 9 agents，ch08 案例 |
 
 **同步規則：** 這個 repo 是 source of truth。修改後複製到 content-asset-system/book/。
+
+## Common Commands
+
+```bash
+# GitBook 本地預覽（需先 npm install -g gitbook-cli）
+gitbook serve
+
+# GitBook 建置靜態檔
+gitbook build
+
+# 數字一致性檢查（修改數字後用）
+grep -rn "28KB" ch*.md
+grep -rn "200-300" ch*.md
+grep -rn "Gaia" ch*.md
+grep -rn "Hera" ch*.md
+grep -rn "Athena" ch*.md
+
+# 禁用詞掃描（提交前用）
+grep -rn '絕對\|一定\|最好的\|唯一' ch*.md | grep -v 'Voice DNA'
+```
 
 ## Commit Convention
 
