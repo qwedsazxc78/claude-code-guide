@@ -28,12 +28,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ├── CONTRIBUTING.md                # 貢獻指南
 ├── ch01-what-is-claude-code.md    # Part I：AI Coding 入門
 ├── ch02-setup-first-conversation.md
-├── ch03-chat-debug.md
-├── ch04-work-plan.md
-├── ch05-config-claudemd.md        # Part II：旗艦章（CLAUDE.md 工程）
-├── ch06-cloud-worker.md
-├── ch07-daily-workflow.md
-├── ch08-advanced-preview.md       # 深入拆解（Gaia 案例）
+├── ch03-chat-debug.md             # Chat tab
+├── ch04-cowork.md                 # Cowork tab（非工程師也能用）
+├── ch05-code.md                   # Code tab
+├── ch06-config-claudemd.md        # Part II：旗艦章（CLAUDE.md 工程）
+├── ch07-background-automation.md  # 背景執行與平行開發
+├── ch08-daily-workflow.md
+├── ch09-advanced-preview.md       # 深入拆解（Gaia 案例）
 └── appendix-a-decision-guide.md   # 初學者決策指南
 ```
 
@@ -48,7 +49,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 招牌句：「你有沒有遇過這種情況？」「重點來了」「簡單來說」
 
 ### Skool CTA 規則
-- **只有 ch01、ch05、ch08 有 Skool URL**
+- **只有 ch01、ch06、ch09 有 Skool URL**
 - 其他章節結尾用 chapter transition（「下一章我們聊...」），不放連結
 - Referral URL: `https://www.skool.com/ai-brain-alex/about?ref=5dde9b20e8e7432aa9a01df6e89685f4`
 - Classroom URL: `https://www.skool.com/ai-brain-alex/classroom?ref=5dde9b20e8e7432aa9a01df6e89685f4`
@@ -75,18 +76,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 | 數字 | 出現在 |
 |------|--------|
-| 28KB / 718 行 CLAUDE.md | ch01, ch02, ch03, ch05 |
-| 200-300 則/天 | ch01, ch02, ch03, ch07 |
-| $200/月 | ch01, ch02, ch07 |
-| Hera 7 agents | ch01, ch06, ch08 |
-| Athena 9 agents | ch01, ch06, ch08 |
-| Gaia 4 agents + 69 commands | ch01, ch03, ch05, ch08 |
+| 28KB / 718 行 CLAUDE.md | ch01, ch02, ch03, ch06 |
+| 200-300 則/天 | ch01, ch02, ch03, ch08 |
+| $200/月 | ch01, ch02, ch08 |
+| Hera 7 agents | ch01, ch07, ch09 |
+| Athena 9 agents | ch01, ch07, ch09 |
+| Gaia 4 agents + 69 commands | ch01, ch03, ch06, ch09 |
 | Pro $20 / Max $100 / $200 | ch02 |
-| /compact 30-40 則 | ch03, ch07 |
-| Rate limit 每 2-3 小時 | ch02, ch07 |
-| Plan 40% / Edit 50% / Auto-Accept 10% | ch04 |
+| /compact 30-40 則 | ch03, ch08 |
+| Rate limit 每 2-3 小時 | ch02, ch08 |
+| Plan 40% / Edit 50% / Auto-Accept 10% | ch05 |
 | 50+ YouTube | ch01 |
-| SRE/DevOps 背景 | ch01, ch05, ch06, ch07, README |
+| SRE/DevOps 背景 | ch01, ch06, ch07, ch08, README |
 
 ### Subtaglines
 

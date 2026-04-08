@@ -5,6 +5,32 @@ Claude Code 更新快，這份 changelog 幫你追蹤書的內容是否跟上。
 
 ---
 
+## [0.2.0] — 2026-04-08
+
+重大結構重組：8 章 → 9 章，對齊 Claude Desktop App 三大 tab（Chat / Cowork / Code）。
+
+### 結構變更
+
+- **新增 ch04 Cowork**：獨立成章，聚焦本地檔案處理，生活化案例（Downloads 大掃除、收據→Excel）
+- **ch03→ch09 全面重新編號**：Work→Code（ch05）、Config（ch06）、背景執行（ch07）、日常工作流（ch08）、進階（ch09）
+- **ch07 移除 CoWork 節**：已獨立為 ch04
+- **ch07 改名**：Cloud Worker → 背景執行與平行開發
+
+### 內容更新
+
+- ch03：新增 3.6 客服逐字稿分析案例（非工程師也能用的 Chat 場景）
+- ch05：新增 5.6 Life OS /today 進階案例 + 更多 Code 使用場景連結
+- ch09（原 ch08）：新增 MCP→CLI 趨勢觀察、Skill 作為 SOP 執行器
+- 每章新增外部參考連結（use case 來源）
+
+### 導航同步
+
+- SUMMARY.md、README.md、index.md、CLAUDE.md 全部同步更新
+- 所有 chapter transition（「下一章我們聊...」）更新為新章號
+- 所有節號（4.x→5.x 等）同步更新
+
+---
+
 ## [0.1.0] — 2026-04-07
 
 首次公開發布。8 章 + 1 附錄，~80 頁 PDF，繁體中文。

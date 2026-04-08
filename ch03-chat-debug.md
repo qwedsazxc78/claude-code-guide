@@ -162,10 +162,54 @@ Claude 在你旁邊，它看到你看到的東西。直接問就好。
 
 ---
 
+## 3.6 不只工程師能用：客服逐字稿分析
+
+Chat 不只是拿來 debug 的。這個案例讓你看到，不寫 code 的人也能用 Chat 做有價值的事。
+
+假設你是產品經理，手上有一個月份的客服對話紀錄——50 個 `.txt` 檔案，每個都是一段客服和客戶的對話。你想知道：客戶到底在抱怨什麼？哪些問題最常出現？
+
+以前的做法：一個一個打開，手動分類，做成表格。大概要花一整天。
+
+用 Chat 的做法：
+
+```
+@support-logs/ 幫我分析這個資料夾裡所有客服對話紀錄，
+找出 top 5 最常出現的客戶抱怨，
+每個抱怨列出出現次數和代表性的原話引用。
+```
+
+Claude 會自動讀取所有檔案，分析內容，然後產出一份結構化的報告：
+
+```
+Top 5 客戶抱怨：
+
+1. 退款流程太慢（出現 18 次）
+   代表性原話：「我已經等了兩週還沒收到退款...」
+
+2. App 登入頻繁失敗（出現 14 次）
+   代表性原話：「每次開 App 都要重新登入...」
+
+3. 客服回覆時間長（出現 11 次）
+   ...
+```
+
+這個分析大概 2 分鐘就跑完。你不需要會寫程式，不需要會用 Excel 的 pivot table，只要會打中文描述你的需求。
+
+這就是 Chat 的核心價值：**你給上下文，Claude 給分析。** 不管你是工程師還是產品經理，這個模式都一樣。
+
+### 更多 Chat 使用場景
+
+- **接手別人的 codebase**：問 Claude 解釋架構，省下數週讀 code 時間 → [Claude Code Legacy](https://claudcod.com/blog/claude-code-legacy-code/)
+- **安全漏洞掃描**：Plan Mode 問 codebase 有無 SQL injection / XSS → [Claude Code Docs](https://code.claude.com/docs/en/overview)
+- **技術債評估**：找出重複邏輯、缺測試、過時 patterns → [Plan Mode Guide](https://claudefa.st/blog/guide/mechanics/planning-modes/)
+- **解讀複雜邏輯**：指定檔案行數，Claude 逐步解釋 regex 或遞迴函式 → [Common Workflows](https://code.claude.com/docs/en/common-workflows)
+
+---
+
 很多人問我「你每天 6 小時都在 Claude Code 裡做什麼？」答案是：80% 在 Chat 模式裡問問題。不是因為我不會寫 code，是因為讓 Claude 先看、先想、先建議，我再決定要不要做，這個效率比自己硬幹快太多了。
 
-**重點來了**：Chat 功能的本質是「給 Claude 正確的上下文，得到正確的答案」。`@mention` 精準帶入上下文，Extended Thinking 處理複雜問題，Multi-Tab 管理平行任務，`@terminal` 直接 debug。這四個工具組合在一起，才是真正的 AI 開發體驗。
+**重點來了**：Chat 功能的本質是「給 Claude 正確的上下文，得到正確的答案」。`@mention` 精準帶入上下文，Extended Thinking 處理複雜問題，Multi-Tab 管理平行任務，`@terminal` 直接 debug。不管你是工程師還是 PM，這四個工具組合在一起，就是真正的 AI 工作體驗。
 
-下一章我們進 Work 模式——從對話變成真的動手改 code。
+下一章我們進 Cowork——不會寫 code 的人也能用 AI 處理本地檔案。
 
 ---
