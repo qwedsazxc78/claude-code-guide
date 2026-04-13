@@ -52,7 +52,7 @@
 
 ## 作者
 
-**Alex Hsieh（謝明杰）**
+**Alex Hsieh（謝明宏）**
 Cloud-F1 | AI 自動化教育
 
 SRE / DevOps 背景出身，目前專注於 AI 工作流設計與自動化教育。每天用 Claude Code 工作 6 小時以上，把踩過的坑和學到的東西整理成這本書。
